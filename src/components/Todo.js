@@ -12,7 +12,6 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Divider from '@mui/material/Divider';
 import { red, green } from '@mui/material/colors';
 import FormDialog from "./FormDialog";
-import moment from "moment";
 
 const Todo = ({ todo }) => {
     const dispatch = useDispatch();
