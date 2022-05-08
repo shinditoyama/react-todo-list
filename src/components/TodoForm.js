@@ -1,8 +1,8 @@
+import { Box, Grid } from "@mui/material";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 import { addTodo, deleteAll, selectFilter } from "../store/slices/todoSlice";
-import { Box, Grid } from "@mui/material";
 import moment from "moment";
 
 const TodoForm = () => {
@@ -29,10 +29,11 @@ const TodoForm = () => {
 
     return (
         <Box sx={{
-            width: '70%',
-            padding: 2,
-            bgcolor: 'background.paper',
+            border: 1,
             borderRadius: 1,
+            borderColor: 'grey.500',
+            backgroundColor: 'background.paper',
+            padding: 2,
             marginBottom: 1,
         }}>
             <Grid container spacing={1}>

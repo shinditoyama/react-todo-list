@@ -1,17 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { deleteTodo, toggleTodo } from "../store/slices/todoSlice";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import Checkbox from "@mui/material/Checkbox";
-import IconButton from "@mui/material/IconButton";
-import EditIcon from '@mui/icons-material/Edit';
+import { ListItem, ListItemButton, ListItemIcon, ListItemText, Checkbox, IconButton, Divider } from "@mui/material";
+import { red, green } from "@mui/material/colors";
+import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import Divider from '@mui/material/Divider';
-import { red, green } from '@mui/material/colors';
 import FormDialog from "./FormDialog";
+import moment from "moment";
 
 const Todo = ({ todo }) => {
     const dispatch = useDispatch();
@@ -55,7 +50,7 @@ const Todo = ({ todo }) => {
                             disableRipple
                         />
                     </ListItemIcon>
-                    <ListItemText primary={todo.name} style={{ textDecoration: todo.completed && "line-through" }} />
+                    <ListItemText primary={todo.name} secondary={moment(todo.timestamp).format("DD/MM/yyyy HH:mm:ss")} style={{ textDecoration: todo.completed && "line-through" }} />
                 </ListItemButton>
             </ListItem>
             <Divider />

@@ -1,18 +1,14 @@
 import { useState } from 'react';
 import { useDispatch } from "react-redux";
 import { updateTodo } from "../store/slices/todoSlice";
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
+import { Button, TextField, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material';
 
 export default function FormDialog({ open, dialogHandler, todo }) {
     const dispatch = useDispatch();
     const [newTitle, setNewTitle] = useState(todo.name);
 
-    const editTask = () => {
+    const editTask = (event) => {
+        event.preventDefault();
         dispatch(updateTodo({ id: todo.id, name: newTitle }));
         dialogHandler();
     }

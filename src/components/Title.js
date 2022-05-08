@@ -1,6 +1,15 @@
+import { Typography } from "@mui/material";
+
 const Title = ({ title }) => {
     return (
-        <h1>{title}</h1>
+        <Typography
+            variant="h3"
+            align="center"
+            gutterBottom
+            fontFamily='Poppins'
+        >
+            {title}
+        </Typography>
     );
 }
 

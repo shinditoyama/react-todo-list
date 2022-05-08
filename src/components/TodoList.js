@@ -1,5 +1,5 @@
+import { Box } from "@mui/material";
 import { useSelector } from "react-redux";
-import { Box } from '@mui/material';
 import Todo from "./Todo";
 
 const TodoList = () => {
@@ -21,11 +21,12 @@ const TodoList = () => {
 
 	return (
 		<Box sx={{
-			width: '70%',
-			height: 408,
-			bgcolor: 'background.paper',
-			overflow: 'auto',
+			border: 1,
 			borderRadius: 1,
+            borderColor: 'grey.500',
+			backgroundColor: 'background.paper',
+			height: 428,
+			overflow: 'auto',
 		}}
 		>
 			{filteredTodoList.map((todo) => (
